@@ -25,38 +25,52 @@
           <!-- For each item -->
           <label class="cursor-pointer item-card flex flex-col items-center">
             <input type="checkbox" name="items" value="Tote Bag" class="sr-only peer">
-            <img src="tote-bag.jpg" alt="Tote Bag" class="h-36 w-36 object-cover mb-3 peer-checked:ring-4 peer-checked:ring-green-500 rounded-md" />
+            <img src="totebag.jpg" alt="Tote Bag" class="h-36 w-36 object-cover mb-3 peer-checked:ring-4 peer-checked:ring-green-500 rounded-md" />
             <span class="text-gray-700 font-medium">Tote Bag</span>
           </label>
           <label class="cursor-pointer item-card flex flex-col items-center">
             <input type="checkbox" name="items" value="Pouch" class="sr-only peer">
-            <img src="pouch.jpg" alt="Pouch" class="h-36 w-36 object-cover mb-3 peer-checked:ring-4 peer-checked:ring-green-500 rounded-md" />
+            <img src="totebag.jpg" alt="Pouch" class="h-36 w-36 object-cover mb-3 peer-checked:ring-4 peer-checked:ring-green-500 rounded-md" />
             <span class="text-gray-700 font-medium">Pouch</span>
           </label>
           <label class="cursor-pointer item-card flex flex-col items-center">
             <input type="checkbox" name="items" value="Towel" class="sr-only peer">
-            <img src="towel.jpg" alt="Towel" class="h-36 w-36 object-cover mb-3 peer-checked:ring-4 peer-checked:ring-green-500 rounded-md" />
+            <img src="totebag.jpg" alt="Towel" class="h-36 w-36 object-cover mb-3 peer-checked:ring-4 peer-checked:ring-green-500 rounded-md" />
             <span class="text-gray-700 font-medium">Towel</span>
           </label>
           <label class="cursor-pointer item-card flex flex-col items-center">
             <input type="checkbox" name="items" value="Document Case" class="sr-only peer">
-            <img src="document-case.jpg" alt="Document Case" class="h-36 w-36 object-cover mb-3 peer-checked:ring-4 peer-checked:ring-green-500 rounded-md" />
+            <img src="totebag.jpg" alt="Document Case" class="h-36 w-36 object-cover mb-3 peer-checked:ring-4 peer-checked:ring-green-500 rounded-md" />
             <span class="text-gray-700 font-medium">Document Case</span>
           </label>
           <label class="cursor-pointer item-card flex flex-col items-center">
             <input type="checkbox" name="items" value="Pen" class="sr-only peer">
-            <img src="pen.jpg" alt="Pen" class="h-36 w-36 object-cover mb-3 peer-checked:ring-4 peer-checked:ring-green-500 rounded-md" />
+            <img src="totebag.jpg" alt="Pen" class="h-36 w-36 object-cover mb-3 peer-checked:ring-4 peer-checked:ring-green-500 rounded-md" />
             <span class="text-gray-700 font-medium">Pen</span>
           </label>
         </div>
       </fieldset>
 
-      <!-- Logo Upload -->
+
+      <!-- Logo Upload (Styled) -->
       <div>
-        <label for="logo" class="block text-lg text-green-700 font-medium mb-2">Upload Your Logo</label>
-        <input type="file" id="logo" name="logo" accept="image/*" class="w-full border rounded p-2" onchange="previewLogo()" required>
+        <label class="block text-lg text-green-700 font-medium mb-2">Upload Your Logo</label>
+      
+        <!-- Hidden File Input -->
+        <input type="file" id="logo" name="logo" accept="image/*" class="hidden" onchange="previewLogoAndShowName()" required>
+      
+        <!-- Custom Button -->
+        <label for="logo" class="inline-block bg-green-600 text-white px-6 py-2 rounded-full cursor-pointer hover:bg-green-700 transition">
+          Choose Logo
+        </label>
+      
+        <!-- File Name Display -->
+        <span id="fileName" class="ml-4 text-sm text-gray-600"></span>
+      
+        <!-- Preview Image -->
         <img id="logoPreview" class="mt-4 mx-auto h-32 hidden rounded-lg shadow-md"/>
       </div>
+
 
       <!-- Email & Quantity -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
