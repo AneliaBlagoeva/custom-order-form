@@ -2,104 +2,63 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Custom Order</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Custom Wellness Order</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
+    body { font-family: 'Inter', sans-serif; }
+    .item-card { background: #fafafa; border-radius: 1rem; padding: 1rem; transition: transform 0.2s, box-shadow 0.2s; }
+    .item-card:hover { transform: translateY(-4px); box-shadow: 0 4px 10px rgba(0,0,0,0.08); }
   </style>
 </head>
-<body class="bg-gradient-to-r from-blue-100 to-purple-100 min-h-screen flex items-center justify-center p-6">
+<body class="bg-gradient-to-b from-green-50 to-white min-h-screen flex items-center justify-center py-10 px-4">
+  <div class="w-full max-w-3xl bg-white rounded-3xl shadow-lg p-8">
+    <h1 class="text-4xl font-bold text-center text-green-800 mb-8">Custom Order Form</h1>
 
-  <div class="w-full max-w-3xl bg-white p-8 rounded-3xl shadow-2xl">
-    <h1 class="text-3xl font-bold mb-6 text-center text-blue-800">Custom Order Form</h1>
-
-    <form action="thank-you.html" method="GET" enctype="multipart/form-data" class="space-y-6">
-
-      <!-- Item Selection with Images -->
+    <form action="thank-you.html" method="GET" enctype="multipart/form-data" class="space-y-8">
+      
+      <!-- Items -->
       <fieldset>
-        <legend class="text-lg font-semibold mb-4">Select Items</legend>
+        <legend class="text-xl font-semibold text-green-700 mb-6">Choose Your Items</legend>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-          
-          <!-- Tote Bag -->
-          <label class="cursor-pointer text-center">
+          <!-- For each item -->
+          <label class="cursor-pointer item-card flex flex-col items-center">
             <input type="checkbox" name="items" value="Tote Bag" class="sr-only peer">
-            <img src="totebag.jpg" alt="Tote Bag" class="h-36 w-36 object-cover mx-auto rounded-xl border-4 border-transparent peer-checked:border-blue-500 transition" />
-            <div class="mt-2 text-sm">Tote Bag</div>
+            <img src="totebag.jpg" alt="Tote Bag" class="h-36 w-36 object-cover mb-3 peer-checked:ring-4 peer-checked:ring-green-500 rounded-md" />
+            <span class="text-gray-700 font-medium">Tote Bag</span>
           </label>
-
-          <!-- Pouch -->
-          <label class="cursor-pointer text-center">
+          <label class="cursor-pointer item-card flex flex-col items-center">
             <input type="checkbox" name="items" value="Pouch" class="sr-only peer">
-            <img src="totebag.jpg" alt="Pouch" class="h-36 w-36 object-cover mx-auto rounded-xl border-4 border-transparent peer-checked:border-blue-500 transition" />
-            <div class="mt-2 text-sm">Pouch</div>
+            <img src="totebag.jpg" alt="Pouch" class="h-36 w-36 object-cover mb-3 peer-checked:ring-4 peer-checked:ring-green-500 rounded-md" />
+            <span class="text-gray-700 font-medium">Pouch</span>
           </label>
-
-          <!-- Towel -->
-          <label class="cursor-pointer text-center">
+          <label class="cursor-pointer item-card flex flex-col items-center">
             <input type="checkbox" name="items" value="Towel" class="sr-only peer">
-            <img src="totebag.jpg" alt="Towel" class="h-36 w-36 object-cover mx-auto rounded-xl border-4 border-transparent peer-checked:border-blue-500 transition" />
-            <div class="mt-2 text-sm">Towel</div>
+            <img src="totebag.jpg" alt="Towel" class="h-36 w-36 object-cover mb-3 peer-checked:ring-4 peer-checked:ring-green-500 rounded-md" />
+            <span class="text-gray-700 font-medium">Towel</span>
           </label>
-
-          <!-- Document Case -->
-          <label class="cursor-pointer text-center">
+          <label class="cursor-pointer item-card flex flex-col items-center">
             <input type="checkbox" name="items" value="Document Case" class="sr-only peer">
-            <img src="totebag.jpg" alt="Document Case" class="h-36 w-36 object-cover mx-auto rounded-xl border-4 border-transparent peer-checked:border-blue-500 transition" />
-            <div class="mt-2 text-sm">Document Case</div>
+            <img src="totebag.jpg" alt="Document Case" class="h-36 w-36 object-cover mb-3 peer-checked:ring-4 peer-checked:ring-green-500 rounded-md" />
+            <span class="text-gray-700 font-medium">Document Case</span>
           </label>
-
-          <!-- Pen -->
-          <label class="cursor-pointer text-center">
+          <label class="cursor-pointer item-card flex flex-col items-center">
             <input type="checkbox" name="items" value="Pen" class="sr-only peer">
-            <img src="totebag.jpg" alt="Pen" class="h-36 w-36 object-cover mx-auto rounded-xl border-4 border-transparent peer-checked:border-blue-500 transition" />
-            <div class="mt-2 text-sm">Pen</div>
+            <img src="totebag.jpg" alt="Pen" class="h-36 w-36 object-cover mb-3 peer-checked:ring-4 peer-checked:ring-green-500 rounded-md" />
+            <span class="text-gray-700 font-medium">Pen</span>
           </label>
-
         </div>
       </fieldset>
 
       <!-- Logo Upload -->
       <div>
-        <label class="block font-medium mb-1" for="logo">Upload Logo</label>
-        <input type="file" id="logo" name="logo" accept="image/*" class="w-full border p-2 rounded" onchange="previewLogo()" required />
-        <img id="logoPreview" class="mt-4 w-32 hidden rounded shadow" />
+        <label for="logo" class="block text-lg text-green-700 font-medium mb-2">Upload Your Logo</label>
+        <input type="file" id="logo" name="logo" accept="image/*" class="w-full border rounded p-2" onchange="previewLogo()" required>
+        <img id="logoPreview" class="mt-4 mx-auto h-32 hidden rounded-lg shadow-md"/>
       </div>
 
-      <!-- Email Address -->
-      <div>
-        <label class="block font-medium mb-1" for="email">Email Address</label>
-        <input type="email" id="email" name="email" class="w-full border rounded p-2" required />
-      </div>
-
-      <!-- Quantity -->
-      <div>
-        <label class="block font-medium mb-1" for="quantity">Quantity</label>
-        <input type="number" id="quantity" name="quantity" min="1" class="w-full border rounded p-2" required />
-      </div>
-
-      <!-- Submit Button -->
-      <div class="text-center">
-        <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-xl hover:bg-blue-700 transition font-semibold">
-          Submit Order
-        </button>
-      </div>
-    </form>
-  </div>
-
-  <script>
-    function previewLogo() {
-      const input = document.getElementById('logo');
-      const preview = document.getElementById('logoPreview');
-      const file = input.files[0];
-      if (file) {
-        preview.src = URL.createObjectURL(file);
-        preview.classList.remove('hidden');
-      }
-    }
-  </script>
-</body>
-</html>
+      <!-- Email & Quantity -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label for="email" class="block text-green-700 font-medium mb
