@@ -99,15 +99,36 @@
   </div>
 
   <script>
-    function previewLogo() {
-      const input = document.getElementById('logo');
-      const preview = document.getElementById('logoPreview');
-      const file = input.files[0];
-      if (file) {
+  function handleLogoUpload() {
+    const input = document.getElementById('logo');
+    const file = input.files[0];
+    const fileInfo = document.getElementById('fileInfo');
+    const progressWrapper = document.getElementById('progressWrapper');
+    const progressBar = document.getElementById('progressBar');
+    const preview = document.getElementById('logoPreview');
+
+    if (file) {
+      // Show file name
+      fileInfo.textContent = "Selected: " + file.name;
+
+      // Reset preview and progress
+      preview.classList.add('hidden');
+      progressWrapper.classList.remove('hidden');
+      progressBar.style.width = '0%';
+
+      // Fake progress animation
+      setTimeout(() => {
+        progressBar.style.width = '100%';
+      }, 100); // slight delay for animation
+
+      // Show preview after "upload"
+      setTimeout(() => {
         preview.src = URL.createObjectURL(file);
         preview.classList.remove('hidden');
-      }
+      }, 1000); // matches duration of progress bar
     }
-  </script>
+  }
+</script>
+
 </body>
 </html>
