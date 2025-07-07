@@ -53,23 +53,30 @@
 
 
       <!-- Logo Upload (Styled) -->
+      <!-- Logo Upload (Styled with Progress & File Name) -->
       <div>
         <label class="block text-lg text-green-700 font-medium mb-2">Upload Your Logo</label>
       
         <!-- Hidden File Input -->
-        <input type="file" id="logo" name="logo" accept="image/*" class="hidden" onchange="previewLogoAndShowName()" required>
+        <input type="file" id="logo" name="logo" accept="image/*" class="hidden" onchange="handleLogoUpload()" required>
       
         <!-- Custom Button -->
         <label for="logo" class="inline-block bg-green-600 text-white px-6 py-2 rounded-full cursor-pointer hover:bg-green-700 transition">
           Choose Logo
         </label>
       
-        <!-- File Name Display -->
-        <span id="fileName" class="ml-4 text-sm text-gray-600"></span>
+        <!-- File Name -->
+        <div id="fileInfo" class="mt-2 text-sm text-gray-600"></div>
       
-        <!-- Preview Image -->
+        <!-- Progress Bar -->
+        <div id="progressWrapper" class="w-full mt-2 bg-gray-200 rounded-full h-2.5 hidden">
+          <div id="progressBar" class="bg-green-500 h-2.5 rounded-full w-0 transition-all duration-1000 ease-out"></div>
+        </div>
+      
+        <!-- Logo Preview -->
         <img id="logoPreview" class="mt-4 mx-auto h-32 hidden rounded-lg shadow-md"/>
       </div>
+
 
 
       <!-- Email & Quantity -->
